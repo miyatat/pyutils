@@ -17,7 +17,12 @@ def join_and_makedirs(*keys):
 
 
 STORAGE_DIR_NAME = join_and_makedirs(SRC_DIR_NAME, 'storage')
-
+TASKS_DIR_NAME = join_and_makedirs(SRC_DIR_NAME, 'tasks')
+TESTS_DIR_NAME = join_and_makedirs(SRC_DIR_NAME, 'tests')
+CONFIG_DIR_NAME = join_and_makedirs(SRC_DIR_NAME, 'config')
+MODEL_DIR_NAME = join_and_makedirs(SRC_DIR_NAME, 'model')
+SANDBOX_DIR_NAME = join_and_makedirs(SRC_DIR_NAME, 'sandbox')
+CONTROLLERS_DIR_NAME = join_and_makedirs(SRC_DIR_NAME, 'controllers')
 
 
 if __name__ == '__main__':

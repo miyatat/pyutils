@@ -13,6 +13,7 @@ def join_and_makedirs(*keys):
     for key in keys:
         path_name = os.path.join(path_name, key)
     os.makedirs(path_name, exist_ok=True)
+    print('define ' + path_name)
     return path_name
 
 

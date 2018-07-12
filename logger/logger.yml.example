@@ -3,7 +3,11 @@ version: 1
 disable_existing_loggers: False
 formatters:
     simple:
-        format: "[%(asctime)s]%(name)s - %(levelname)s:%(message)s"
+        format: "[%(asctime)s] %(name)s - %(levelname)s : %(message)s"
+
+    detail:
+        format: "[%(asctime)s] %(name)s - %(levelname)s : %(message)s"
+
 
 handlers:
     console:
@@ -31,8 +35,13 @@ handlers:
         encoding: utf8
 
 loggers:
-    my_module:
-        level: ERROR
+    my_package:
+        level: DEBUG
+        handlers: [console]
+        propagate: no
+
+    __main__:
+        level: DEBUG
         handlers: [console]
         propagate: no
 

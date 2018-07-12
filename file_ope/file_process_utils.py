@@ -23,11 +23,11 @@ def get_latest_modified_file_path(dir_name, extension='*'):
         latest_modified_file_path = sorted(files, key=lambda files: files[1])[-1][0]
         return latest_modified_file_path
     else:
-        logger.info('No file in' + dir_name)
+        logger.warning('No file in' + dir_name)
         return None
 
 
-def delete_except_latest_files(dir_name, left_num=20, delete_flag=False):
+def delete_except_latest_files(dir_name, left_num=20, delete_flag=True):
     """
     直近に変更が加えられた・作成されたファイルのうちし定数を残して残りを削除する関数
     Args:
@@ -53,11 +53,11 @@ def delete_except_latest_files(dir_name, left_num=20, delete_flag=False):
             latest_left_num = [x[0] for x in latest_file_path_list]
             latest_filename_list = [os.path.basename(x) for x in latest_left_num]
 
-            logger.info('Less than ' + str(left_num) + ' files in', dir_name, '\n', 'latest list=')
+            logger.info('Less than ' + str(left_num) + ' files in ' + dir_name + '\n' + 'latest list=')
             [logger.info(x) for x in latest_filename_list]
 
     else:
-        logger.warning(f'0 file in {dir_name}')
+        logger.warning('No file in' + dir_name)
 
 
 def get_all_file_path_in_dir(dir_name):

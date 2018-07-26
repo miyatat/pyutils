@@ -53,7 +53,7 @@ def delete_except_latest_files(dir_name, left_num=20, delete_flag=True):
             latest_left_num = [x[0] for x in latest_file_path_list]
             latest_filename_list = [os.path.basename(x) for x in latest_left_num]
 
-            logger.info('Less than ' + str(left_num) + ' files in ' + dir_name + '\n' + 'latest list=')
+            logger.info('Less than / Equal to ' + str(left_num) + ' files in ' + dir_name + '\n' + 'latest list=')
             [logger.info(x) for x in latest_filename_list]
 
     else:

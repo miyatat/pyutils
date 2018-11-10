@@ -3,9 +3,11 @@
 from logging import getLogger
 import os
 
+import repo
+
 logger = getLogger(__name__)
 
-SRC_DIR_NAME = os.path.dirname(os.path.abspath(__file__))
+SRC_DIR_NAME = repo.__path__[0]
 
 
 def join_and_makedirs(*keys):

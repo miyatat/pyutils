@@ -1,6 +1,8 @@
 import yaml
-from const import MONGO_CONFIG_PATH
+
 from pymongo import MongoClient, ASCENDING, DESCENDING
+
+from repo.controllers.path_manager import MONGO_CONFIG_PATH
 
 
 class MongoManager():
@@ -35,6 +37,6 @@ class MongoManager():
     def initialize_collection(self):
         return self.collection.delete_many({})
 
-if __name__ == '__main__':
-    Pass
 
+if __name__ == '__main__':
+    pass
